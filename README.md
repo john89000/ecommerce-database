@@ -36,3 +36,42 @@ Key entities include:
    ```bash
    git clone https://github.com/john89000/ecommerce-database.git
    cd ecommerce-database
+
+## Import the SQL file:
+
+mysql -u your_username -p ecommerce_db < ecommerce_store.sql
+
+
+## Verify tables:
+
+USE ecommerce_db;
+SHOW TABLES;
+
+## 📊 Sample Queries
+List all customers and their orders:
+SELECT c.first_name, c.last_name, o.order_id, o.total, o.status
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id;
+
+## Find products that are low in stock:
+SELECT p.name, i.quantity, i.reorder_level
+FROM products p
+JOIN inventory i ON p.product_id = i.product_id
+WHERE i.quantity < i.reorder_level;
+
+## Show reviews for a product:
+SELECT p.name AS product, r.rating, r.title, r.body
+FROM reviews r
+JOIN products p ON r.product_id = p.product_id;
+
+## ✅ Features
+
+Full relational schema with constraints
+
+Handles customer accounts, carts, and orders
+
+Supports multiple suppliers and categories
+
+Tracks payments and reviews
+
+Includes sample data for testing
