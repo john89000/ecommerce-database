@@ -38,9 +38,8 @@ Key entities include:
    cd ecommerce-database
 
 ## Import the SQL file:
-
-mysql -u your_username -p ecommerce_db < ecommerce_store.sql
-
+   ```bash
+   mysql -u your_username -p ecommerce_db < ecommerce_store.sql
 
 ## Verify tables:
 
