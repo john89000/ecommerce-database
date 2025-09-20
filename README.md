@@ -42,7 +42,6 @@ Key entities include:
    mysql -u your_username -p ecommerce_db < ecommerce_store.sql
 
 ## Verify tables:
- ```bash
 USE ecommerce_db;
 SHOW TABLES;
 
